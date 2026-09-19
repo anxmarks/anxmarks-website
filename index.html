@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ana — Data Portfolio</title>
+<meta name="description" content="Ana's data analytics portfolio — Python, SQL, Power BI dashboards and projects.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="top-bar"></div>
+<header class="nav-wrap">
+  <nav>
+    <a href="#welcome">Welcome</a>
+    <a href="#about">About me</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact" class="nav-cta">Contact me</a>
+  </nav>
+</header>
+
+<main>
+  <section id="welcome" class="section welcome">
+    <div class="deco deco-a" data-flower="a"></div>
+    <div class="deco deco-b" data-flower="b"></div>
+    <div class="deco deco-c" data-flower="c"></div>
+    <div class="welcome-content" data-reveal>
+      <p class="eyebrow">Data girl · portfolio</p>
+      <h1>Welcome</h1>
+      <p class="lede">I turn messy spreadsheets into stories people actually want to read. Scroll down, it gets colourful.</p>
+      <div class="cta-row">
+        <a href="#projects" class="btn btn-pink">See my projects</a>
+        <a href="#contact" class="btn btn-white">Say hi</a>
+      </div>
+    </div>
+    <svg class="wave wave-bottom" viewBox="0 0 1440 150" preserveAspectRatio="none">
+      <path d="M0,74 C180,22 300,118 470,96 C650,72 760,8 940,26 C1120,44 1270,110 1440,72 L1440,150 L0,150 Z" fill="#F9D77E"></path>
+    </svg>
+  </section>
+
+  <section id="about" class="section about">
+    <svg class="wave wave-top" viewBox="0 0 1440 160" preserveAspectRatio="none">
+      <path d="M0,0 L1440,0 L1440,60 C1260,120 1120,26 940,54 C760,82 640,150 460,126 C290,104 150,40 0,86 Z" fill="#F9D77E"></path>
+    </svg>
+    <div class="about-grid" data-reveal>
+      <div class="about-text">
+        <h2>Hi! I'm Ana</h2>
+        <p>I'm a data analyst and developer in the making. I loved staying indoors and playing games since I was a kid, and I recently achieved my bachelor's degree in Computer Science.</p>
+        <p>Right now I work mostly in Python, SQL, BI tools, building dashboards, but I'm always learning something new!</p>
+        <div class="tag-row">
+          <span class="tag tag-cream">Coffee-powered</span>
+          <span class="tag tag-purple">Chart obsessed</span>
+          <span class="tag tag-blue">Open to internships</span>
+        </div>
+      </div>
+      <div class="polaroid-wrap">
+        <button type="button" class="polaroid-stack" id="photoStack" title="Click to shuffle">
+          <div class="polaroid card-a" id="cardA">
+            <div class="polaroid-photo photo-a"><img src="assets/me.jpg" alt="portrait photo"></div>
+            <p>Look its me!</p>
+          </div>
+          <div class="polaroid card-b" id="cardB">
+            <div class="polaroid-photo photo-b"><img src="assets/old_me.jpg" alt="second photo"></div>
+            <p>Always a tech girl ♡</p>
+          </div>
+        </button>
+        <div class="deco deco-float-b" data-flower="b"></div>
+        <div class="deco deco-bee" data-bee="plain"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-seam" id="flowerBand"></div>
+
+  <section id="projects" class="section projects">
+    <div class="section-head" data-reveal>
+      <h2>Check out my projects</h2>
+      <p id="projectsIntro"></p>
+    </div>
+    <div class="projects-grid" id="projectsGrid" data-reveal></div>
+    <div class="scallop scallop-blue"></div>
+  </section>
+
+  <section id="skills" class="section skills">
+    <div class="deco deco-float-c" data-flower="c"></div>
+    <div class="skills-inner" data-reveal>
+      <h2>Skills</h2>
+      <p class="section-sub">The stuff I reach for on a normal Tuesday.</p>
+      <div class="skills-list" id="skillsList"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <div class="deco deco-float-a" data-flower="a"></div>
+    <div class="deco deco-bee-warm" data-bee="warm"></div>
+    <div class="contact-inner" data-reveal>
+      <h2>Contact me!</h2>
+      <p class="section-sub">Internships, freelance dashboards, or just to send me a nice dataset.</p>
+      <div class="contact-grid">
+        <form id="contactForm" action="https://formspree.io/f/xjykgvbo" method="POST">
+          <label>Your name
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" placeholder="you@email.com" required>
+          </label>
+          <label>Message
+            <textarea rows="4" name="message" placeholder="Say something nice!" required></textarea>
+          </label>
+          <button type="submit" id="sendBtn">Send it</button>
+        </form>
+        <div class="contact-links">
+          <a href="mailto:anamark28@outlook.com" class="contact-link">
+            <span class="dot dot-pink"></span>
+            <span>Email</span>
+          </a>
+          <a href="https://www.linkedin.com/in/ana-luiza-marks-241252252/" class="contact-link" target="_blank" rel="noopener noreferrer">
+            <span class="dot dot-purple"></span>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/anxmarks" class="contact-link" target="_blank" rel="noopener noreferrer">
+            <span class="dot dot-blue"></span>
+            <span>GitHub - @anxmarks</span>
+          </a>
+          <a href="https://www.instagram.com/anxmarks/" class="contact-link" target="_blank" rel="noopener noreferrer">
+            <span class="dot dot-rose"></span>
+            <span>Instagram - @anxmarks</span>
+          </a>
+          <a href="#" class="cv-link">Download my CV (PDF)</a>
+        </div>
+      </div>
+      <p class="footer-note">Made with too many colours · 2026</p>
+    </div>
+  </section>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
