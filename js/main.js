@@ -1,19 +1,15 @@
 (function () {
   'use strict';
 
+  // [name, blurb, tag, githubUrl, imagePath]
+  // Point githubUrl at each project's repo, and imagePath at a screenshot in assets/projects/
+  // (leave imagePath '' to keep the placeholder pattern).
   const PROJECTS = [
-    ['Spotify listening audit', 'A year of my streaming history, cleaned and clustered by mood.', 'Python · pandas'],
-    ['City bike flows', 'Where the bikes go at 8am, and where they never come back from.', 'Geo · Folium'],
-    ['Supermarket price watch', 'Scraped weekly prices for 40 basics and tracked inflation myself.', 'Scraping'],
-    ['Churn prediction', 'Logistic regression on a telco set, tuned until it stopped lying.', 'scikit-learn'],
-    ['Sales dashboard', 'Five-page Power BI report for a small bakery chain.', 'Power BI'],
-    ['Netflix genre map', 'Which genres actually get finished, by country.', 'SQL · Tableau'],
-    ['Survey cleanup kit', 'Reusable notebook that fixes the mess free-text answers create.', 'Python'],
-    ['Weather vs mood', 'My own diary data against local weather. Results: inconclusive, fun.', 'Personal'],
-    ['Football xG explorer', 'Expected goals, explained to people who hate maths.', 'Streamlit'],
-    ['Library loans A/B', 'Did the new signage change what people borrow?', 'Statistics'],
-    ['Recipe cost calculator', 'Ingredient prices to cost per portion, automatically.', 'Excel · VBA'],
-    ['Portfolio analytics', 'Tracking who reads this page and how far they scroll.', 'GA4']
+    ['SIM Mortality', 'ETL pipeline of death records from Brazil national mortality registry, focused on maternal and infant mortality trends over the decade.', 'Python · SQLite · Power BI', 'https://github.com/anxmarks/sim-mortality-etl', 'assets/projects/sim-mortality.avif'],
+    ['Sweet Cost', 'A mobile app for pastry shops that calculates the cost and selling price of their products—from purchased ingredients to the final recipe price—accounting for raw materials, labor, packaging, and the studios fixed costs.', 'JavaScript · TypeScript · CSS', 'https://github.com/anxmarks/sweet-cost', 'assets/projects/sweet-cost.jpg'],
+    ['Reel Rate', 'ReelRate is a web application for movie lovers that combines an extensive film catalog with community ratings. Users explore new releases, view individual title pages, and record their opinions—including a rating and a comment—creating a collective reference for each film.', 'JavaScript · TypeScript · CSS', 'https://github.com/anxmarks/ReelRate-ver2', 'assets/projects/reel-rate.jpg'],
+    ['Chocolate Sales Analysis', 'This project performs a comprehensive analysis of a chocolate sales database, integrating data processing with Python and creating an executive dashboard in Tableau. The main objective is to extract strategic insights related to revenue performance, product efficiency, and regional sales distribution.', 'Python · Tableau', 'https://github.com/anxmarks/chocolate-sales', 'assets/projects/chocolate-sales.jpg']
+   
   ];
 
   const SKILLS = [
@@ -140,11 +136,14 @@
     if (projectsIntro) {
       projectsIntro.textContent = count + (count === 1 ? ' thing' : ' things') + ' I built, broke, and rebuilt. Hover one to have a look.';
     }
-    PROJECTS.forEach(([name, blurb, tag]) => {
-      const card = document.createElement('div');
+    PROJECTS.forEach(([name, blurb, tag, link, image]) => {
+      const card = document.createElement('a');
       card.className = 'project-card';
+      card.href = link;
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
       card.innerHTML =
-        `<div class="project-shot">project shot</div>` +
+        `<div class="project-shot">${image ? `<img src="${image}" alt="${name} screenshot">` : 'project shot'}</div>` +
         `<div class="project-title-row"><span class="dot"></span><h3></h3></div>` +
         `<p></p>` +
         `<span class="project-tag"></span>`;
@@ -162,12 +161,10 @@
       row.className = 'skill-row';
       row.innerHTML =
         `<div class="skill-icon"></div>` +
-        `<div class="skill-text"><h3></h3><p></p></div>` +
-        `<span class="skill-level"></span>`;
+        `<div class="skill-text"><h3></h3><p></p></div>`;
       row.querySelector('.skill-icon').innerHTML = iconSVG(iconKind, color);
       row.querySelector('h3').textContent = name;
       row.querySelector('p').textContent = detail;
-      row.querySelector('.skill-level').textContent = level;
       skillsList.appendChild(row);
     });
   }
